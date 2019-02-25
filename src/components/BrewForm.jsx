@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class BrewForm extends Component {
-  constructor(props) {
-    super(props)
-
-    this.handleChange = this.handleChange.bind(this)
-    this.state = {
-      city: ''
-    }
-  }
-
-  handleChange(ev) {
-    this.setState({
-      city: ev.target.value
-    })
-  }
-
-render(){
+const BrewForm = (props) => {
   return (
-    <form onSubmit={(event) => {
-      event.preventDefault();
-      this.props.handleSubmitCity(this.state.city);
-    }}>
-      <input onChange={this.handleChange} type="text" placeholder="Enter your city code" value={this.state.city}></input>
-      <button>Submit</button>
-    </form>
+    <div id="form">
+      <form onSubmit={props.handleSubmitCity}>
+        <input onChange={props.handleChange} type="text" name="by_city" placeholder="Search by City" value={props.by_city}></input>
+        <button>Find a brewery!</button>
+      </form>
+      <h3>Or</h3>
+      <form onSubmit={props.handleSubmitState}>
+        <input onChange={props.handleChange} type="text" name="by_state" placeholder="Search by State" value={props.by_state}></input>
+        <button>Find a brewery!</button>
+      </form>
+      <h3>Or if you know you're brewery</h3>
+      <form onSubmit={props.handleSubmitName}>
+        <input onChange={props.handleChange} type="text" name="by_name" placeholder="Search by Name" value={props.by_name}></input>
+        <button>Find a brewery!</button>
+      </form>
+    </div>
     )
-  }
 }
 
 export default BrewForm;
