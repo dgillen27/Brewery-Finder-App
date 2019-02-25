@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import fetchBrewery from './services/fetchBrewery'
 import BreweryList from './components/BreweryList'
+import BrewForm from './components/BrewForm'
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Brewery Finder</h1>
+        <BrewForm />
       </div>
     );
   }

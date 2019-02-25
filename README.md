@@ -26,7 +26,7 @@ This app will be a brewery finder that takes information from the user and outpu
 
 ## API Link
 
-(https://www.openbrewerydb.org/#documentation "Open Brewery DB")
+https://www.openbrewerydb.org/#documentation
 
 ## MVP
 
