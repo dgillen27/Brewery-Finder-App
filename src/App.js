@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import fetchBrewery from './services/fetchBrewery'
+import fetchByCity from './services/fetchBrewery'
 import BreweryList from './components/BreweryList'
 import BrewForm from './components/BrewForm'
 
@@ -10,23 +9,35 @@ class App extends Component {
     super();
 
     this.state = {
-      breweries: []
+      breweries: [],
+      city: ''
     }
+    this.handleSubmitCity = this.handleSubmitCity.bind(this)
   }
 
-  async componentDidMount() {
-    const breweries = await fetchBrewery();
-
+  async handleSubmitCity(city) {
+    const brewData = await fetchByCity(city);
     this.setState({
-      breweries: breweries
+      breweries: brewData
     })
     console.log(this.state);
   }
+
+  handleChange(ev) {
+    this.setState({
+      city: ev.target.value
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Brewery Finder</h1>
-        <BrewForm />
+        <BrewForm
+        handleSubmitCity={this.handleSubmitCity}
+        handleChange={this.handleChange}
+        />
+        <BreweryList breweries={this.state.breweries}/>
       </div>
     );
   }
