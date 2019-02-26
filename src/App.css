@@ -8,11 +8,6 @@ body {
   background: linear-gradient(#B57303, #944103);
 }
 
-.notNav {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
-
 nav {
   display: flex;
   flex-direction: row;
@@ -21,12 +16,49 @@ nav {
   background: #FAFFBD;
 }
 
+.notNav {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+#brewery {
+  background: black;
+  margin: 10px;
+  height: 350px;
+  width: 650px;
+}
+
 h2 {
-  border: 2px solid black;
+  border: 2px solid #944203;
+  padding: 5px;
+  color: #944203;
 }
 
 h3 {
   color: #FAFFBD;
+  font-size: 35px;
+}
+
+h4 {
+  color: #944203;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #944203;
+  transition: 200ms;
+  padding-bottom: 5px;
+  font-size: 25px;
+}
+
+a:hover {
+  color: #D3A62A;
+}
+
+p {
+  color: #944203;
+  font-size: 25px;
 }
 
 .BreweryList {
@@ -46,6 +78,9 @@ input {
   background: #D3A62A;
   flex-direction: column;
   height: 800px;
+  position: sticky;
+  top: 10px;
+  margin-left: 10px;
 }
 
 form {
@@ -58,21 +93,12 @@ button {
   color: #E3C454;
   transition: 200ms;
   font-size: 25px;
+  border-radius: 10px;
+  border: 1px solid #E3C454;
 }
 
 button:hover {
   background: #E3C454;
-  color: #612911
-}
-
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  color: #612911;
+  border: 1px solid #612911;
 }

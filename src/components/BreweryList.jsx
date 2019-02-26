@@ -4,8 +4,13 @@ const BreweryList = (props) => {
   return (
     <div className="BreweryList">
   {props.breweries.map(brewery => (
-    <div key={brewery.id}>
-    <h3>{brewery.name}</h3>
+    <div id="brewery"key={brewery.id}>
+      <h3>{brewery.name}</h3>
+      <h4>{brewery.street&&`${brewery.street}, `}{brewery.state}</h4>
+      {brewery.website_url?
+        <a href={brewery.website_url} target="_blank">{brewery.website_url}</a>:
+        <p>No website available</p>
+      }
     </div>
   ))}
   </div>

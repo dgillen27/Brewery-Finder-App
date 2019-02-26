@@ -28,6 +28,7 @@ class App extends Component {
     this.setState({
       breweries: brewData
     })
+    console.log(this.state.data);
   }
 
   async handleSubmitState(ev) {
@@ -36,6 +37,7 @@ class App extends Component {
     this.setState({
       breweries: brewData
     })
+    console.log(this.state.data);
   }
 
   async handleSubmitName(ev) {
@@ -44,6 +46,7 @@ class App extends Component {
     this.setState({
       breweries: brewData
     })
+    console.log(this.state.data);
   }
 
   handleChange(ev) {
@@ -61,7 +64,7 @@ class App extends Component {
           <BrewForm
           handleSubmitCity={this.handleSubmitCity}
           handleSubmitState={this.handleSubmitState}
-          handleSubmitType={this.handleSubmitType}
+          handleSubmitName={this.handleSubmitName}
           handleChange={this.handleChange}
           />
           <BreweryList breweries={this.state.breweries}/>
