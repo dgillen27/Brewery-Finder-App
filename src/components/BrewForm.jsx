@@ -12,7 +12,7 @@ const BrewForm = (props) => {
         <input onChange={props.handleChange} type="text" name="by_state" placeholder="Search by State" value={props.by_state}></input>
         <button>Find a brewery!</button>
       </form>
-      <h3>Or if you know you're brewery</h3>
+      <h3>Or if you know your brewery</h3>
       <form onSubmit={props.handleSubmitName}>
         <input onChange={props.handleChange} type="text" name="by_name" placeholder="Search by Name" value={props.by_name}></input>
         <button>Find a brewery!</button>

@@ -11,6 +11,9 @@ const BreweryList = (props) => {
         <a href={brewery.website_url} target="_blank">{brewery.website_url}</a>:
         <p>No website available</p>
       }
+      {brewery.phone?
+      <h4>Phone: {brewery.phone}</h4> :
+      <p>No Phone Number On File</p>}
     </div>
   ))}
   </div>
