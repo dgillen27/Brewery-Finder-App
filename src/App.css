@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background: white;
-  /* background: #9C510D; */
   font-family: 'Ultra', serif;
 }
 
@@ -92,16 +91,14 @@ h1 {
 .main {
   display: grid;
   grid-template-columns: 20% 40% 40%;
-  min-height: 100vh;
+  min-height: 86vh;
 }
 
 #form {
   display: flex;
   justify-content: space-around;
   grid-column-start: 1;
-  /* background: hsl(29, 85%, 25%); */
   background: white;
-  /* background: #E5B97E; */
   flex-direction: column;
   height: 600px;
   width: 19%;
@@ -367,9 +364,7 @@ h6 {
   p {
     font-size: 9px;
   }
-
 }
-
 
 @media only screen and (max-width: 1440px) {
   #brewery {
@@ -383,5 +378,9 @@ h6 {
     margin-top: -238px;
     box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
     z-index: -1;
+  }
+
+  #form {
+    height: 550px;
   }
 }

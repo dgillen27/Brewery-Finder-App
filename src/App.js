@@ -30,9 +30,8 @@ class App extends Component {
     ev.preventDefault();
     const brewData = await fetchByCity(this.state.by_city);
     this.setState({
-      breweries: brewData
+      breweries: brewData,
     })
-    console.log(this.state.data);
   }
 
   async handleSubmitState(ev) {
@@ -41,7 +40,6 @@ class App extends Component {
     this.setState({
       breweries: brewData
     })
-    console.log(this.state.data);
   }
 
   async handleSubmitName(ev) {
@@ -50,7 +48,6 @@ class App extends Component {
     this.setState({
       breweries: brewData
     })
-    console.log(this.state.data);
   }
 
   handleChange(ev) {
