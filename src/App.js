@@ -3,11 +3,10 @@ import './App.css';
 import { fetchByCity, fetchByState, fetchByName } from './services/fetchBrewery'
 import BreweryList from './components/BreweryList'
 import BrewForm from './components/BrewForm'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Welcome from './components/Welcome'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
-import SimpleMap from './components/SimpleMap'
 
 class App extends Component {
   constructor() {
@@ -80,7 +79,7 @@ class App extends Component {
                 <BreweryList {...props} breweries={this.state.breweries}/>
               )}/>
             </div>
-            <Footer />
+          <Footer />
       </div>
     );
   }

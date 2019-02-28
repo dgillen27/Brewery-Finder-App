@@ -4,9 +4,7 @@ body {
 
 .App {
   text-align: center;
-  transition: .02s;
-  background: white;
-  font-family: sans-serif;
+  background: #9C510D;
   font-family: 'Ultra', serif;
 }
 
@@ -16,7 +14,11 @@ nav {
   width: 100%;
   background: rgb(30, 30, 30);
   height: 70px;
-  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28)
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 #a {
@@ -24,6 +26,7 @@ nav {
   color: #FAFFBD;
   border: none;
   margin-top: 10px;
+  font-family: "Ultra", serif;
 }
 
 #a:hover {
@@ -35,6 +38,8 @@ nav {
   margin-left: 100px;
   color: gold;
   font-size: 25px;
+  font-family: "Ultra", serif;
+  text-decoration: none;
 }
 
 #welcome {
@@ -61,55 +66,63 @@ nav {
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .main {
   display: grid;
   grid-template-columns: 20% 40% 40%;
+  min-height: 100vh;
 }
 
 h1 {
   color: #FAFFBD;
   font-size: 85px;
   text-shadow: 5px 5px black;
+  font-weight: 400;
 }
 
 #form {
   display: flex;
   justify-content: space-around;
   grid-column-start: 1;
-  background: #AAAAAA;
+  background: hsl(29, 85%, 25%);
   flex-direction: column;
-  height: 720px;
-  position: sticky;
-  top: 10px;
+  height: 600px;
+  width: 19%;
+  position: fixed;
+  top: 80px;
   margin-left: 10px;
   margin-top: 10px;
   transition: .02s;
   box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
   border-radius: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 input {
   font-size: 25px;
   margin-bottom: 10px;
   width: 85%;
-  padding: 1px;
-  border: 1px solid transparent;
+  padding-left: 5px;
+  border: 2px solid #f1f1f1;
   border-radius: 5px;
   font-family: "Ultra", serif;
 }
 
 input:focus{
   outline: none;
-  background: #FAFFBD;
+  background-color: white;
+}
+
+input:after {
+  background-color: white;
 }
 
 button {
   background: #1E1E1E;
   color: gold;
-  transition: 200ms;
+  transition: 200ms color;
   font-size: 25px;
   border-radius: 5px;
   border: transparent;
@@ -135,10 +148,11 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  margin-top: 80px;
 }
 
 #brewery {
-  background: #eeeeee;
+  background: hsl(29, 85%, 25%);
   margin: 10px;
   margin-left: 15px;
   height: 400px;
@@ -146,33 +160,33 @@ form {
   box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
   grid-column-start: 1;
   font-family: 'Ultra', sans-serif;
-  -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #444444;
-   text-align: left;
-   border-radius: 5px;
+  text-align: left;
+  border-radius: 5px;
+  padding-left: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: static;
 }
 
 h3 {
-  color: white;
+  color: #FAFFBD;
   font-size: 35px;
   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #444444;
+   -webkit-text-stroke-color: #1E1E1E;
 }
 
 h4 {
-  color: white;
+  color: black;
   font-size: 30px;
+  font-family: "Georgia", serif;
+  font-size: 20px;
 }
 
 a {
-  color: white;
-  transition: 300ms;
+  color: black;
+  transition: 300ms color;
   padding-bottom: 5px;
-  font-size: 25px;
-
-  -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: #444444;
-   text-decoration: underline #444444;
+  font-size: 20px;
+  font-family: "Georgia", serif;
 }
 
 a:hover {
@@ -180,26 +194,28 @@ a:hover {
 }
 
 .no {
-  margin-top: -35px;
-  color: white;
+  margin-top: -20px;
+  color: black;
+  font-family: "Georgia", serif;
 }
 
 p {
-  color: white;
+  color: black;
   font-size: 25px;
+  font-family: "Georgia", serif;
 }
 
 .innerMap {
-  width: 100%;
-  height: 400px;
-  grid-column-start: 3;
-  margin-left: 665px;
-  margin-top: -347px;
+  height: 450px;
+  margin-left: 660px;
+  margin-top: -238px;
   box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
+  z-index: -1;
 }
 
 .containerMap {
   grid-column-start: 3;
+  z-index: -1;
 }
 
 .link {
@@ -215,6 +231,7 @@ p {
   border: none;
   text-decoration: none;
   text-shadow: 5px 5px black;
+  font-family: "Ultra", serif;
 }
 
 #route:hover {
@@ -222,12 +239,15 @@ p {
 }
 
 #footer {
-  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   color: #1E1E1E;
+  background: #9C510D;
+  z-index: -1;
+  width: 100%;
+  border-top: 1px solid black;
 }
 
 .logo {
@@ -238,7 +258,6 @@ p {
   margin-right: 6px;
   filter: grayscale(100%);
   z-index: -1;
-  transition: 0;
 }
 
 h6 {

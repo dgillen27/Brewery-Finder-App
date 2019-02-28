@@ -1,7 +1,6 @@
 import React from 'react';
 import SimpleMap from './SimpleMap'
 import { Link, Route } from 'react-router-dom'
-import Footer from './Footer'
 
 const BreweryList = (props) => {
   return (
@@ -14,20 +13,20 @@ const BreweryList = (props) => {
               <p className="no">No map available</p>:
               null
             }
-            {brewery.website_url?
-        <a href={brewery.website_url} target="_blank">{brewery.website_url}</a>:
-        <p>No website available</p>
-      }
-      {brewery.phone?
-      <h4>Phone: {brewery.phone}</h4> :
-      <p>No Phone Number On File</p>}
-      {brewery.latitude && brewery.longitude?
-      <Route path='/BreweryList/:id/map' render={(props) => (
-        <SimpleMap {...props} currentBrewery={brewery}/>
-      )}/>: null}
-    </div>
+              {brewery.website_url?
+                <a href={brewery.website_url} target="_blank" rel="noopener noreferrer">{brewery.website_url}</a>:
+                  <p>No website available</p>
+                }
+                  {brewery.phone?
+                    <h4>Phone: {brewery.phone}</h4> :
+                    <p>No Phone Number On File</p>}
+                    {brewery.latitude && brewery.longitude?
+                      <Route path='/BreweryList/:id/map' render={(props) => (
+                        <SimpleMap {...props} currentBrewery={brewery}/>
+                      )}/>: null}
+        </div>
   ))}
-  </div>
+    </div>
   )
 }
 
