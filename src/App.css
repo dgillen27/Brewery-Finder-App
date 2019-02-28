@@ -1,33 +1,205 @@
 body {
-    background: #B57303;
+    background: white;
 }
 
 .App {
   text-align: center;
   transition: .02s;
-  background: #B57303;
+  background: white;
+  font-family: sans-serif;
+  font-family: 'Ultra', serif;
 }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
   width: 100%;
-  background: #FAFFBD;
+  background: rgb(30, 30, 30);
   height: 70px;
+  box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28)
+}
+
+#a {
+  text-decoration: none;
+  color: #FAFFBD;
+  border: none;
+  margin-top: 10px;
+}
+
+#a:hover {
+  color: gold;
+}
+
+#logo {
+  text-align: left;
+  margin-left: 100px;
+  color: gold;
+  font-size: 25px;
+}
+
+#welcome {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  margin: 0;
+  background: no-repeat url(https://steadyserv.com/wp-content/uploads/2017/06/breweries.jpg);
+  background-size: cover;
+  z-index: 1;
+}
+
+#cover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .1);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .main {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 20% 40% 40%;
+}
+
+h1 {
+  color: #FAFFBD;
+  font-size: 85px;
+  text-shadow: 5px 5px black;
+}
+
+#form {
+  display: flex;
+  justify-content: space-around;
+  grid-column-start: 1;
+  background: #AAAAAA;
+  flex-direction: column;
+  height: 720px;
+  position: sticky;
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: .02s;
+  box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
+  border-radius: 5px;
+}
+
+input {
+  font-size: 25px;
+  margin-bottom: 10px;
+  width: 85%;
+  padding: 1px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-family: "Ultra", serif;
+}
+
+input:focus{
+  outline: none;
+  background: #FAFFBD;
+}
+
+button {
+  background: #1E1E1E;
+  color: gold;
+  transition: 200ms;
+  font-size: 25px;
+  border-radius: 5px;
+  border: transparent;
+  padding: 1px;
+  width: 85%;
+  font-family: "Ultra", serif;
+}
+
+button:hover {
+  background: gold;
+  color: #1E1E1E;
+}
+
+button:focus {
+  outline: none;
+}
+
+form {
+  display: inline;
+}
+
+.BreweryList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 #brewery {
-  background: #944103;
+  background: #eeeeee;
   margin: 10px;
-  height: 350px;
+  margin-left: 15px;
+  height: 400px;
   width: 650px;
-  box-shadow: 5px 9px rgba(51, 51, 51, .3);
+  box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
+  grid-column-start: 1;
+  font-family: 'Ultra', sans-serif;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #444444;
+   text-align: left;
+   border-radius: 5px;
+}
+
+h3 {
+  color: white;
+  font-size: 35px;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #444444;
+}
+
+h4 {
+  color: white;
+  font-size: 30px;
+}
+
+a {
+  color: white;
+  transition: 300ms;
+  padding-bottom: 5px;
+  font-size: 25px;
+
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #444444;
+   text-decoration: underline #444444;
+}
+
+a:hover {
+  color: gold;
+}
+
+.no {
+  margin-top: -35px;
+  color: white;
+}
+
+p {
+  color: white;
+  font-size: 25px;
+}
+
+.innerMap {
+  width: 100%;
+  height: 400px;
+  grid-column-start: 3;
+  margin-left: 665px;
+  margin-top: -347px;
+  box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
+}
+
+.containerMap {
+  grid-column-start: 3;
 }
 
 .link {
@@ -37,86 +209,38 @@ nav {
   font-size: 40px;
 }
 
-#welcome {
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-
-h1 {
+#route {
   color:#FAFFBD;
   font-size: 85px;
-}
-
-h3 {
-  color: #FAFFBD;
-  font-size: 35px;
-}
-
-h4 {
-  color: #FAFFBD;
-  font-size: 30px;
-}
-
-a {
-  color: #FAFFBD;
-  transition: 200ms;
-  padding-bottom: 5px;
-  font-size: 25px;
-}
-
-a:hover {
-  color: #D3A62A;
-}
-
-#a {
+  border: none;
   text-decoration: none;
+  text-shadow: 5px 5px black;
 }
 
-p {
-  color: #FAFFBD;
-  font-size: 25px;
+#route:hover {
+  color: gold;
 }
 
-.BreweryList {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-input {
-  font-size: 25px;
-  margin-bottom: 10px;
-  width: 80%;
-}
-
-#form {
+#footer {
+  z-index: -1;
   display: flex;
-  justify-content: space-around;
-  grid-column-start: 1;
-  background: #D3A62A;
-  flex-direction: column;
-  height: 720px;
-  position: sticky;
-  top: 80px;
-  margin-left: 10px;
-  box-shadow: 5px 9px rgba(51, 51, 51, .3);
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #1E1E1E;
 }
 
-form {
-  display: inline;
+.logo {
+  height: 50px;
+  width: auto;
+  border-radius: 25px;
+  margin-left: 6px;
+  margin-right: 6px;
+  filter: grayscale(100%);
+  z-index: -1;
+  transition: 0;
 }
 
-button {
-  background: #612911;
-  color: #E3C454;
-  transition: 200ms;
-  font-size: 25px;
-  border-radius: 10px;
-  border: 1px solid #E3C454;
-  width: 75%;
-}
-
-button:hover {
-  background: #E3C454;
-  color: #612911;
-  border: 1px solid #612911;
+h6 {
+  margin-right: 10px;
 }

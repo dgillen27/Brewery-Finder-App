@@ -5,6 +5,9 @@ import BreweryList from './components/BreweryList'
 import BrewForm from './components/BrewForm'
 import { Route, Link } from 'react-router-dom'
 import Welcome from './components/Welcome'
+import Footer from './components/Footer'
+import Nav from './components/Nav'
+import SimpleMap from './components/SimpleMap'
 
 class App extends Component {
   constructor() {
@@ -60,25 +63,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          <Link id="a" className="link" to="/">Home</Link>
-          <Link id="a" className="link" to="/BreweryList">BreweryList</Link>
-          <Link id="a" className="link" to="/FavoriteBrewery">My Favorites</Link>
-        </nav>
-        <div className="main">
-          <Route exact path="/" component={Welcome}/>
-          <Route path="/BreweryList" render={(props) => (
-            <BrewForm {...props}
-              handleSubmitCity={this.handleSubmitCity}
-              handleSubmitState={this.handleSubmitState}
-              handleSubmitName={this.handleSubmitName}
-              handleChange={this.handleChange}
-            />
-          )}/>
-          <Route path="/BreweryList" render={(props) => (
-            <BreweryList {...props} breweries={this.state.breweries}/>
-          )}/>
-        </div>
+        <Nav />
+          <div className="main">
+            <div id="home">
+              <Route exact path="/" component={Welcome}/>
+            </div>
+              <Route path="/BreweryList" render={(props) => (
+                <BrewForm {...props}
+                handleSubmitCity={this.handleSubmitCity}
+                handleSubmitState={this.handleSubmitState}
+                handleSubmitName={this.handleSubmitName}
+                handleChange={this.handleChange}
+                />
+              )}/>
+              <Route path="/BreweryList" render={(props) => (
+                <BreweryList {...props} breweries={this.state.breweries}/>
+              )}/>
+            </div>
+            <Footer />
       </div>
     );
   }
