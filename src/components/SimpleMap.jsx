@@ -9,7 +9,7 @@ class SimpleMap extends Component {
     super(props);
 
     this.state = {
-      zoom: 13
+      zoom: 14
     };
   }
 
@@ -29,6 +29,7 @@ class SimpleMap extends Component {
               lat={parseFloat(this.props.currentBrewery.latitude)}
               lng={parseFloat(this.props.currentBrewery.longitude)}
               text={this.props.currentBrewery.name}
+              marker={{lat: parseFloat(this.props.currentBrewery.longitude), lng: parseFloat(this.props.currentBrewery.latitude)}}
             />
           </GoogleMapReact>
         </div>:

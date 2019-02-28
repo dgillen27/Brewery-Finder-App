@@ -13,7 +13,7 @@ const BrewForm = (props) => {
       </form>
       <form onSubmit={props.handleSubmitName}>
         <input onChange={props.handleChange} type="text" name="by_name" placeholder="Name" value={props.by_name}></input>
-        <button>Search by Name</button>
+        <button>Search by Name!</button>
       </form>
     </div>
     )

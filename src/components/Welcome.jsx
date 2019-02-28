@@ -7,7 +7,7 @@ const Welcome = () => {
     <div id="welcome">
       <div id="cover">
         <h1>Welcome!</h1>
-        <Link id="route" className="link" to="/BreweryList">Get Started!</Link>
+        <Link id="get-started" className="link" to="/BreweryList">Get Started!</Link>
       </div>
     </div>
   )

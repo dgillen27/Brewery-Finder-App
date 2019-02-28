@@ -7,7 +7,7 @@ const BreweryList = (props) => {
     <div className="BreweryList">
       {props.breweries.map(brewery => (
         <div id="brewery"key={brewery.id}>
-          <h3>{brewery.name}</h3>
+          <h2>{brewery.name}</h2>
             <h4><Link to={`/BreweryList/${brewery.id}/map`}>{brewery.street&&`${brewery.street}, `}{brewery.state}</Link></h4>
             {!brewery.latitude && !brewery.longitude?
               <p className="no">No map available</p>:

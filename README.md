@@ -36,3 +36,8 @@ https://www.openbrewerydb.org/#documentation
 ## Post MVP
 
 - Incorporate a map
+
+## Issues
+
+
+## Resolutions
