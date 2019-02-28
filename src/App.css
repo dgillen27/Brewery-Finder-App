@@ -167,11 +167,7 @@ form {
 }
 
 #brewery {
-  /* background: hsl(29, 85%, 25%); */
-  /* background: rgba(32,33,36,0.28); */
   background: white;
-  /* background: #1E1E1E; */
-  /* background: #E5B97E; */
   margin: 10px;
   margin-left: 15px;
   height: 400px;
@@ -243,10 +239,10 @@ p {
   align-items: center;
   font-size: 30px;
   color: #1E1E1E;
-  background: #9C510D;
+  background: #f1f1f1;
   z-index: -1;
   width: 100%;
-  border-top: 1px solid black;
+  border-top: 1px solid #efefef;
 }
 
 .git {
@@ -372,4 +368,20 @@ h6 {
     font-size: 9px;
   }
 
+}
+
+
+@media only screen and (max-width: 1440px) {
+  #brewery {
+    height: 375px;
+    width: 555px;
+    margin-left: 10px;
+  }
+
+  .innerMap {
+    margin-left: 565px;
+    margin-top: -238px;
+    box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
+    z-index: -1;
+  }
 }
