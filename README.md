@@ -1,8 +1,5 @@
-## Issues
-## Resolutions
 
 # Brewery Finder
-
 
 ## Project Description
 
@@ -50,21 +47,39 @@ https://www.npmjs.com/package/google-map-react
 
 | SimpleMap | This is the component that contains the map package |
 
-## Additional Libraries
 
- Use this section to list all supporting libraries and thier role in the project.
 
 ## Code Snippet
 
+Putting together the BreweryList was a bit of a challenge due to the amount of conditional rendering necessary. Integrating the map and styling in this was also a big challenge.
+
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+<div className="BreweryList">
+  {props.breweries.map(brewery => (
+    <div id="brewery"key={brewery.id}>
+      <h2>{brewery.name}</h2>
+        <h4><Link to={`/BreweryList/${brewery.id}/map`}>{brewery.street&&`${brewery.street}, `}{brewery.state}</Link></h4>
+        {!brewery.latitude && !brewery.longitude?
+          <p className="no">No map available</p>:
+          null
+        }
+          {brewery.website_url?
+            <a href={brewery.website_url} target="_blank" rel="noopener noreferrer">{brewery.website_url}</a>:
+              <p>No website available</p>
+            }
+              {brewery.phone?
+                <h4>Phone: {brewery.phone}</h4> :
+                <p>No Phone Number On File</p>}
+                {brewery.latitude && brewery.longitude?
+                  <Route path='/BreweryList/:id/map' render={(props) => (
+                    <SimpleMap {...props} currentBrewery={brewery}/>
+                  )}/>: null}
 ```
+
+## Additional Libraries
+
+The code for the map was taken partially from the code provided by the npm package.
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+The largest logical issue I encountered during this project was passing down state to the map component. In the end I needed to parseFloat the information from state to properly pass the latitude and longitude needed for the map.
