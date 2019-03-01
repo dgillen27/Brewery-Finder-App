@@ -1,43 +1,70 @@
-# Brewery Finder!
+## Issues
+## Resolutions
+
+# Brewery Finder
+
 
 ## Project Description
 
 This app will be a brewery finder that takes information from the user and outputs breweries in their area. There will be different filtering options including: State, city, Name, Type and if the brewery is dog friendly.
 
-## Expected Problems
-
-- Filtering breweries based on user input
-
-### Solutions
-
-- Create a form that will take in the filtering data
-
 ## Wireframes
 
 [StartPage](imgs/WireFrame1.jpg)
 
-[Mid Phase](imgs/WireFrame2.jpg)
+[Form, before lists](imgs/WireFrame2.jpg)
 
-[OtherLists](imgs/WireFrame3.jpg)
+[BreweryList](imgs/WireFrame3.jpg)
 
-## Component Hierarchy
+### Component Hierarchy
 
 [StartPage Wireframe](imgs/Component_hierarchy.jpg)
 
-## API Link
+## MVP
+
+- Retrieve data from an external api
+- Create a form component that filters the breweries based on city, state or name
+- Render the data in the browser
+
+### PostMVP
+
+- Integrate the Google Maps API and connect the information provided by the OpenBreweryDB API to map the locations of the breweries.
+
+## API Link & NPM Package
 
 https://www.openbrewerydb.org/#documentation
 
-## MVP
+https://www.npmjs.com/package/google-map-react
 
-- Retrieve data and render it in the browser
-- Create a form component that filters the breweries
+## Functional Components
 
-## Post MVP
+| Welcome | This is the landing page for the app |
 
-- Incorporate a map
+| Nav | This component will render the nav bar |
 
-## Issues
+| Footer | This will render the footer |
 
+| BreweryList | This component will contain the divs that contain the brewery information and the map |
 
-## Resolutions
+| BrewForm | This component will include the form that contains the input fields and submit buttons |
+
+| SimpleMap | This is the component that contains the map package |
+
+## Additional Libraries
+
+ Use this section to list all supporting libraries and thier role in the project.
+
+## Code Snippet
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
