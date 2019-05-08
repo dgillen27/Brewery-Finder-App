@@ -31,6 +31,7 @@ class App extends Component {
     const brewData = await fetchByCity(this.state.by_city);
     this.setState({
       breweries: brewData,
+      by_city: '',
     })
   }
 
@@ -38,7 +39,8 @@ class App extends Component {
     ev.preventDefault();
     const brewData = await fetchByState(this.state.by_state);
     this.setState({
-      breweries: brewData
+      breweries: brewData,
+      by_state: ''
     })
   }
 
@@ -46,7 +48,8 @@ class App extends Component {
     ev.preventDefault();
     const brewData = await fetchByName(this.state.by_name);
     this.setState({
-      breweries: brewData
+      breweries: brewData,
+      by_name: ''
     })
   }
 
