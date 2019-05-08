@@ -143,7 +143,7 @@ input:after {
 button {
   background: #1E1E1E;
   color: gold;
-  transition: 300ms;
+  transition: background-color 300ms;
   border-radius: 5px;
   border: transparent;
   padding: 1px;
