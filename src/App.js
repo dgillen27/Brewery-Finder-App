@@ -3,7 +3,7 @@ import './App.css';
 import { fetchByCity, fetchByState, fetchByName } from './services/fetchBrewery'
 import BreweryList from './components/BreweryList'
 import BrewForm from './components/BrewForm'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import Welcome from './components/Welcome'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
@@ -18,7 +18,8 @@ class App extends Component {
       by_city: '',
       by_state: '',
       by_zip: '',
-      by_type: ''
+      by_type: '',
+      by_name: '',
     }
     this.handleSubmitCity = this.handleSubmitCity.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -67,6 +68,9 @@ class App extends Component {
           <Route exact path="/" component={Welcome}/>
           <Route path="/BreweryList" render={(props) => (
             <BrewForm {...props}
+              by_city={this.state.by_city}
+              by_state={this.state.by_state}
+              by_name={this.state.by_name}
               handleSubmitCity={this.handleSubmitCity}
               handleSubmitState={this.handleSubmitState}
               handleSubmitName={this.handleSubmitName}
@@ -82,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

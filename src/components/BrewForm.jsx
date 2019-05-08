@@ -1,10 +1,12 @@
 import React from 'react';
 
 const BrewForm = (props) => {
+  const { by_city } = props
+  console.log(by_city)
   return (
     <div id="form">
       <form onSubmit={props.handleSubmitCity}>
-        <input onChange={props.handleChange} type="text" name="by_city" placeholder="City" value={props.by_city}></input>
+        <input onChange={props.handleChange} type="text" name="by_city" placeholder="City" value={by_city}></input>
         <button>Search by City!</button>
       </form>
       <form onSubmit={props.handleSubmitState}>
