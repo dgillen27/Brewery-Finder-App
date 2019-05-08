@@ -298,11 +298,6 @@ h6 {
     font-size: 18px;
   }
 
-  #brewery {
-    min-width: 50vw;
-    width: 50vw;
-  }
-
   #form {
     display: grid;
     position: relative;
@@ -328,7 +323,8 @@ h6 {
   #brewery {
     margin: 5px;
     height: 150px;
-    width: 160px;
+    min-width: 45%;
+    width: 50%;
     box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
     font-family: 'Ultra', sans-serif;
     text-align: left;
@@ -341,6 +337,7 @@ h6 {
   .innerMap {
     margin-left: 51vw;
     margin-top: -115px;
+    width: 90%;
   }
 
   h2 {
