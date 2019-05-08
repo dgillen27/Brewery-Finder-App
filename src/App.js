@@ -64,23 +64,19 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-          <div className="main">
-            <div id="home">
-              <Route exact path="/" component={Welcome}/>
-            </div>
-              <Route path="/BreweryList" render={(props) => (
-                <BrewForm {...props}
-                handleSubmitCity={this.handleSubmitCity}
-                handleSubmitState={this.handleSubmitState}
-                handleSubmitName={this.handleSubmitName}
-                handleChange={this.handleChange}
-                />
-              )}/>
-              <Route path="/BreweryList" render={(props) => (
-                <BreweryList {...props} breweries={this.state.breweries}/>
-              )}/>
-            </div>
-          <Footer />
+          <Route exact path="/" component={Welcome}/>
+          <Route path="/BreweryList" render={(props) => (
+            <BrewForm {...props}
+              handleSubmitCity={this.handleSubmitCity}
+              handleSubmitState={this.handleSubmitState}
+              handleSubmitName={this.handleSubmitName}
+              handleChange={this.handleChange}
+            />
+          )}/>
+          <Route path="/BreweryList" render={(props) => (
+            <BreweryList {...props} breweries={this.state.breweries}/>
+          )}/>
+        <Footer />
       </div>
     );
   }

@@ -6,8 +6,9 @@
 
 nav {
   display: grid;
-  grid-template-columns: 60% 20% 20%;
+  grid-template-columns: 40% 60%;
   width: 100%;
+  max-width: 100vw;
   background: rgb(30, 30, 30);
   height: 70px;
   box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
@@ -16,6 +17,12 @@ nav {
   left: 0;
   z-index: 5;
   text-align: left;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 h1 {
@@ -54,7 +61,6 @@ h1 {
 
 #logo {
   text-align: left;
-  margin-left: 100px;
   color: gold;
   font-size: 30px;
   font-family: "Ultra", serif;
@@ -74,6 +80,8 @@ h1 {
   background: no-repeat url(https://i.imgur.com/rfv3AZj.jpg);
   background-size: cover;
   z-index: 1;
+  width: 100%;
+  max-width: 100vw;
 }
 
 #cover {
@@ -89,8 +97,7 @@ h1 {
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 20% 40% 40%;
+  margin-left: 20%;
   min-height: 86vh;
 }
 
@@ -101,6 +108,7 @@ h1 {
   background: white;
   flex-direction: column;
   height: 600px;
+  /* min-width: 300px; */
   width: 19%;
   position: fixed;
   top: 80px;
@@ -157,9 +165,6 @@ form {
 }
 
 .BreweryList {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   margin-top: 80px;
 }
 
@@ -168,7 +173,9 @@ form {
   margin: 10px;
   margin-left: 15px;
   height: 400px;
-  width: 650px;
+  min-width: 350px;
+  width: 50%;
+  max-width: 650px;
   box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
   grid-column-start: 1;
   font-family: 'Ultra', sans-serif;
@@ -219,10 +226,12 @@ p {
 }
 
 .innerMap {
-  margin-left: 660px;
+  margin-left: 101%;
   margin-top: -238px;
   box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
   z-index: -1;
+  height: 350px;
+  width: 92%;
 }
 
 .link {
@@ -261,21 +270,20 @@ h6 {
   .main {
     display: flex;
     flex-direction: column;
+    margin-left: 0;
   }
 
   nav {
-    display: grid;
-    grid-template-columns: 50% 25% 25%;
-    text-align: center;
+    width: 100vw;
   }
 
   #logo {
-    font-size: 13px;
+    font-size: 16px;
     margin-left: 10px;
   }
 
   #a {
-    font-size: 10px;
+    font-size: 14px;
     align-self: center;
     margin-right: 10px;
   }
@@ -291,7 +299,8 @@ h6 {
   }
 
   #brewery {
-    width: 50%;
+    min-width: 50vw;
+    width: 50vw;
   }
 
   #form {
@@ -330,7 +339,7 @@ h6 {
   }
 
   .innerMap {
-    margin-left: 175px;
+    margin-left: 51vw;
     margin-top: -115px;
   }
 
@@ -364,21 +373,26 @@ h6 {
   }
 }
 
-@media  screen and (max-width: 1440px) and (min-width: 701px) {
-  #brewery {
-    height: 375px;
-    width: 555px;
+@media only screen and (max-width: 475px) {
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  nav {
+    width: 100vw;
+  }
+
+  #logo {
+    font-size: 14px;
     margin-left: 10px;
   }
 
-  .innerMap {
-    margin-left: 565px;
-    margin-top: -238px;
-    box-shadow: 1px 5px 6px 1px rgba(32,33,36,0.28);
-    z-index: -1;
-  }
-
-  #form {
-    height: 550px;
+  #a {
+    font-size: 12px;
+    align-self: center;
+    margin-right: 10px;
   }
 }

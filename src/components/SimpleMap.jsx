@@ -16,8 +16,8 @@ class SimpleMap extends Component {
   render() {
     return (
       <div className="containerMap">
-        {parseInt(this.props.match.params.id) === this.props.currentBrewery.id?
-        <div className="innerMap" style={{ height: '350px', width: '100%' }}>
+        { parseInt(this.props.match.params.id) === this.props.currentBrewery.id &&
+        <div className="innerMap">
           <GoogleMapReact
             bootstrapURLKeys={{ key: `${apiKey}` }}
             defaultCenter={{
@@ -31,8 +31,7 @@ class SimpleMap extends Component {
               text={this.props.currentBrewery.name}
             />
           </GoogleMapReact>
-        </div>:
-        <div className="theMap"></div>
+        </div>
       }
     </div>
     );
