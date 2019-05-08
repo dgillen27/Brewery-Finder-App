@@ -41,10 +41,11 @@ h1 {
   background-color: white;
   text-decoration: none;
   font-family: "Ultra", serif;
+  transition: background-color 300ms;
 }
 
 #get-started:hover {
-  color: gold;
+  background-color: rgb(30, 30, 30);
 }
 
 #a {
@@ -142,7 +143,7 @@ input:after {
 button {
   background: #1E1E1E;
   color: gold;
-  transition: 200ms color;
+  transition: 300ms;
   border-radius: 5px;
   border: transparent;
   padding: 1px;
@@ -154,6 +155,7 @@ button {
 button:hover {
   background: gold;
   color: #1E1E1E;
+  cursor: pointer;
 }
 
 button:focus {
