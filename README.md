@@ -5,18 +5,6 @@
 
 This app will be a brewery finder that takes information from the user and outputs breweries in their area. There will be different filtering options including: State, city, Name, Type and if the brewery is dog friendly.
 
-## Wireframes
-
-[StartPage](imgs/WireFrame1.jpg)
-
-[Form, before lists](imgs/WireFrame2.jpg)
-
-[BreweryList](imgs/WireFrame3.jpg)
-
-### Component Hierarchy
-
-[StartPage Wireframe](imgs/Component_hierarchy.jpg)
-
 ## MVP
 
 - Retrieve data from an external api
@@ -26,6 +14,17 @@ This app will be a brewery finder that takes information from the user and outpu
 ### PostMVP
 
 - Integrate the Google Maps API and connect the information provided by the OpenBreweryDB API to map the locations of the breweries.
+
+## Issues and Resolutions
+
+The largest logical issue I encountered during this project was passing down state to the map component. In the end I needed to parseFloat the information from state to properly pass the latitude and longitude needed for the map.
+
+## Installation Instructions
+
+- Fork and clone this repo
+- Run npm install
+- Run npm start
+- Get hacking!
 
 ## API Link & NPM Package
 
@@ -46,8 +45,6 @@ https://www.npmjs.com/package/google-map-react
 | BrewForm | This component will include the form that contains the input fields and submit buttons |
 
 | SimpleMap | This is the component that contains the map package |
-
-
 
 ## Code Snippet
 
@@ -80,6 +77,14 @@ Putting together the BreweryList was a bit of a challenge due to the amount of c
 
 The code for the map was taken partially from the code provided by the npm package.
 
-## Issues and Resolutions
+## Wireframes
 
-The largest logical issue I encountered during this project was passing down state to the map component. In the end I needed to parseFloat the information from state to properly pass the latitude and longitude needed for the map.
+[StartPage](imgs/WireFrame1.jpg)
+
+[Form, before lists](imgs/WireFrame2.jpg)
+
+[BreweryList](imgs/WireFrame3.jpg)
+
+### Component Hierarchy
+
+[StartPage Wireframe](imgs/Component_hierarchy.jpg)
