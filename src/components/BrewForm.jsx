@@ -1,24 +1,48 @@
-import React from 'react';
+import React from "react";
 
-const BrewForm = (props) => {
-  const { by_city } = props
-  console.log(by_city)
+const BrewForm = props => {
+  const {
+    by_city,
+    by_state,
+    handleSubmitCity,
+    handleSubmitName,
+    handleSubmitState,
+    handleChange
+  } = props;
   return (
     <div id="form">
-      <form onSubmit={props.handleSubmitCity}>
-        <input onChange={props.handleChange} type="text" name="by_city" placeholder="City" value={by_city}></input>
+      <form onSubmit={handleSubmitCity}>
+        <input
+          onChange={handleChange}
+          type="text"
+          name="by_city"
+          placeholder="City"
+          value={by_city}
+        ></input>
         <button>Search by City!</button>
       </form>
-      <form onSubmit={props.handleSubmitState}>
-        <input onChange={props.handleChange} type="text" name="by_state" placeholder="State" value={props.by_state}></input>
+      <form onSubmit={handleSubmitState}>
+        <input
+          onChange={handleChange}
+          type="text"
+          name="by_state"
+          placeholder="State"
+          value={by_state}
+        ></input>
         <button>Search by State!</button>
       </form>
-      <form onSubmit={props.handleSubmitName}>
-        <input onChange={props.handleChange} type="text" name="by_name" placeholder="Name" value={props.by_name}></input>
+      <form onSubmit={handleSubmitName}>
+        <input
+          onChange={handleChange}
+          type="text"
+          name="by_name"
+          placeholder="Name"
+          value={props.by_name}
+        ></input>
         <button>Search by Name!</button>
       </form>
     </div>
-    )
-}
+  );
+};
 
 export default BrewForm;
