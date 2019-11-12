@@ -9,7 +9,7 @@ const BreweryList = props => {
           brewery =>
             !brewery.name.includes("Brewery in Planning") &&
             !brewery.name.includes("Brewery In Planning") && (
-              <Brewery brewery={brewery} />
+              <Brewery brewery={brewery} key={brewery.id} />
             )
         )}
       </div>
