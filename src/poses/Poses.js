@@ -1,13 +1,26 @@
 import posed from "react-pose";
 
-export const SlideLeftContainter = posed.div({
+export const SlideRightContainer = posed.div({
+  open: { x: -20, opacity: 0 },
+  enter: {
+    x: 0,
+    opacity: 1,
+    delay: 100,
+    transition: {
+      x: { type: "spring", stiffness: 600, damping: 25 },
+      default: { duration: 300 }
+    }
+  }
+});
+
+export const SlideLeftContainer = posed.div({
   open: { x: 20, opacity: 0 },
   enter: {
     x: 0,
     opacity: 1,
     delay: 100,
     transition: {
-      x: { type: "spring", stiffness: 500, damping: 40 },
+      x: { type: "spring", stiffness: 600, damping: 25 },
       default: { duration: 300 }
     }
   }
@@ -20,7 +33,7 @@ export const SlideUpContainer = posed.div({
     opacity: 1,
     delay: 100,
     transition: {
-      y: { type: "spring", stiffness: 500, damping: 40 },
+      y: { type: "spring", stiffness: 600, damping: 25 },
       default: { duration: 300 }
     }
   }
