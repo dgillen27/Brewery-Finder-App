@@ -1,4 +1,5 @@
 import React from "react";
+import { SlideUpContainer } from "../poses/Poses";
 
 const BrewForm = props => {
   const {
@@ -10,7 +11,7 @@ const BrewForm = props => {
     handleChange
   } = props;
   return (
-    <div id="form">
+    <SlideUpContainer pose="enter" initialPose="open" id="form">
       <form onSubmit={handleSubmitCity}>
         <input
           onChange={handleChange}
@@ -41,7 +42,7 @@ const BrewForm = props => {
         ></input>
         <button>Search by Name!</button>
       </form>
-    </div>
+    </SlideUpContainer>
   );
 };
 

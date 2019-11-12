@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
 import SimpleMap from "./SimpleMap";
+import { SlideLeftContainter } from "../poses/Poses";
 
 export default function Brewery({ brewery }) {
   const {
@@ -15,7 +16,7 @@ export default function Brewery({ brewery }) {
   } = brewery;
 
   return (
-    <div id="brewery" key={id}>
+    <SlideLeftContainter pose="enter" initialPose="open" id="brewery" key={id}>
       <h2>{name}</h2>
       <h4>
         <Link to={`/BreweryList/${id}/map`}>
@@ -38,6 +39,6 @@ export default function Brewery({ brewery }) {
           render={props => <SimpleMap {...props} currentBrewery={brewery} />}
         />
       )}
-    </div>
+    </SlideLeftContainter>
   );
 }
